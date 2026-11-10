@@ -1,0 +1,41 @@
+{
+  "name": "connected",
+  "version": "1.0.0",
+  "description": "ConnectEd — živi feed škole koji spaja učenike po interesovanjima i talentima.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "gen:seed": "tsx scripts/gen-seed.ts",
+    "gen:setup": "tsx scripts/gen-setup.ts",
+    "test": "vitest run",
+    "test:e2e": "playwright test --trace off",
+    "test:e2e:offline": "playwright test --trace off --project=offline",
+    "test:e2e:online": "playwright test --trace off --project=online"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
+    "@supabase/supabase-js": "^2.119.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.7",
+    "vitest": "^5.1.0"
+  },
+  "private": true,
+  "type": "module"
+}
