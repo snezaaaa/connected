@@ -34,6 +34,6 @@ export function nickProblem(nick: string): string | null {
 }
 
 export const AUTH_EMAIL_DOMAIN =
-  (import.meta as { env?: Record<string, string> }).env?.VITE_AUTH_EMAIL_DOMAIN || 'connected.demo'
+  (import.meta as { env?: Record<string, string> }).env?.VITE_AUTH_EMAIL_DOMAIN || 'connected.test'
 
 export const nickToEmail = (nick: string) => `${normalizeNick(nick)}@${AUTH_EMAIL_DOMAIN}`

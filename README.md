@@ -63,7 +63,7 @@ Pokreće se triggerom kad učenik sačuva oznake (novi nalog), kad mentor odobri
 - „Treba mi pomoć“ čitaju samo mentor i pedagog.
 - Mjerila su samo zbirni brojevi (`get_metrics`).
 - Pristupni kod se troši atomski (`redeem_code`, zaključavanje reda). Iskorišćen kod se ne povezuje sa nalogom.
-- Auth koristi sintetički email `nik@connected.demo`, bez pravog emaila.
+- Auth koristi sintetički email `nik@connected.test` (`.test` je rezervisan domen, pošta nikad ne stiže). Bez pravog emaila.
 
 ---
 
