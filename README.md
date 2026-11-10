@@ -7,7 +7,7 @@
 
 > **Demo.** Škola je prava, ali su **svi učenici u bazi izmišljeni** (samo nikovi). Nema stvarnih podataka o učenicima, nema analitike ni praćenja.
 
-**Aplikacija:** `https://<vaš-github-nalog>.github.io/connected/`
+**Aplikacija:** https://snezaaaa.github.io/connected/
 
 ---
 
@@ -74,6 +74,8 @@ Pokreće se triggerom kad učenik sačuva oznake (novi nalog), kad mentor odobri
 2. Sačekajte da se projekat podigne (1–2 min).
 
 ### 2. Baza: migracije i seed
+> Baza postavljena prije ispravke „Resetuj demo“: pokrenite i `supabase/migrations/0006_fix_reset.sql` (u `setup.sql` je već uključen).
+
 1. U projektu otvorite **SQL Editor** → **New query**.
 2. Zalijepite **cijeli** sadržaj fajla [`supabase/setup.sql`](supabase/setup.sql) i kliknite **Run**. Pokreće se jednom, na praznom projektu.
 3. Provjera: **Table Editor** treba da prikaže tabele `profiles` (40 redova), `projects` i ostale.
@@ -114,7 +116,7 @@ Pristupni kodovi su u seedu. Svaki važi **jednom**. Mentor vidi sve neiskoriš�
 |---|---|
 | `CE-3B-7K2Q` | Učenica A (III-2) |
 | `CE-2A-5M8P` | Učenica B (II-1) |
-| `CE-MT-2026` | Mentor (prvi mentorski nalog) |
+| `CE-MT-2026` | Mentor: već iskorišćen za nalog **`prof.e2e`** / `demo1234` (koristi ga i online test) |
 
 Po dva koda postoje za svako od 16 odjeljenja, plus još dva mentorska i jedan za pedagoga.
 
@@ -125,7 +127,7 @@ Po dva koda postoje za svako od 16 odjeljenja, plus još dva mentorska i jedan z
 **Priprema:** mentor (laptop ili telefon 3) je prijavljen i klikne **Resetuj demo**. Telefoni 1 i 2 imaju otvorenu aplikaciju na početnom ekranu.
 
 1. **Telefon 1, učenica A:** „Imam pristupni kod“ → `CE-3B-7K2Q` → nik → lozinka → oznake: *Znam* → Podcast; *Volim* → Pisanje → **Sačuvaj profil**.
-   Ako stigne neki drugi poziv, klikne „Ne sada“ (pokazuje da nema posljedica).
+   A može dobiti do dva poziva za postojeće projekte (npr. foto-priča, jer voli pisanje). Klikne „Ne sada“: to pokazuje da odbijanje nema posljedica.
    **Pokreni projekat:** „Podcast traži montažera“, cilj, oznake *Video montaža* + *Podcast* → **Pošalji na odobrenje**.
 2. **Laptop, mentor:** projekat se sam pojavi pod „Na odobrenju“ → **✓ Odobri**.
 3. **Telefon 2, učenica B:** `CE-2A-5M8P` → nik → lozinka → *Znam* → **Video montaža** → Sačuvaj.
@@ -147,9 +149,10 @@ Aplikacija se otvara i bez interneta ako je na tom uređaju **bar jednom otvoren
 ```bash
 npm test                    # paritet spajanja SQL ↔ TS (PGlite), nik, zabranjene riječi
 npm run test:e2e:offline    # Playwright: cijeli scenario offline (jedan browser kontekst)
-E2E_SUPABASE_URL=… E2E_SUPABASE_ANON_KEY=… npm run test:e2e:online
-                            # Playwright: dva odvojena konteksta (A, B) + mentor, preko Realtime.
-                            # Koristi pravi Supabase i na početku i kraju RESETUJE demo.
+E2E_BASE_URL=https://snezaaaa.github.io/connected/ npm run test:e2e:online
+                            # Playwright nad objavljenom aplikacijom: dva odvojena konteksta (A, B)
+                            # + mentor, uživo preko Realtime. Na početku i kraju RESETUJE demo.
+                            # (ili lokalni build: E2E_SUPABASE_URL=… E2E_SUPABASE_ANON_KEY=…)
 ```
 
 ## Prilagođavanje

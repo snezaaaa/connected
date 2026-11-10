@@ -69,8 +69,9 @@ test('online: dva telefona + mentor, uživo preko Realtime', async ({ browser })
   // Telefon 1: A odmah vidi obavještenje (bez osvježavanja stranice)
   await expect(a.locator('.toast').getByText(/ucenicaB se pridružio\/la timu/)).toBeVisible()
   await expect(a.getByTestId('bell-dot')).toBeVisible()
+  await dismissInvitesExcept(a)
   await a.goto('./#/timovi')
-  await a.getByText(TITLE).click()
+  await a.getByTestId('project-card').filter({ hasText: TITLE }).click()
   await expect(a.getByTestId('wall').getByText('ucenicaB se pridružio/la timu 🎉')).toBeVisible()
 
   // Mentor: „0 → 1“ raste uživo

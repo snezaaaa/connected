@@ -29,7 +29,7 @@ export async function dismissInvitesExcept(page: Page, keepTitle?: string) {
   for (let i = 0; i < 3; i++) {
     const card = page.getByTestId('invite-card')
     if (!(await card.isVisible().catch(() => false))) {
-      await page.waitForTimeout(600)
+      await page.waitForTimeout(1500)
       if (!(await card.isVisible().catch(() => false))) return
     }
     if (keepTitle && (await card.getByText(keepTitle).isVisible())) return
