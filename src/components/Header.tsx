@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useApp } from '../state'
+import { go as goTo } from '../lib/go'
 import { SCHOOL } from '../config/school'
 import type { AppNotification, LocalAccount } from '../data/types'
 import { fmtAgo } from '../i18n/me'
@@ -159,7 +160,6 @@ function HelpSheet({ onClose }: { onClose: () => void }) {
 /** Offline: „Prebaci nalog“ — više uloga na jednom uređaju. */
 function AccountMenu({ onClose }: { onClose: () => void }) {
   const { ds, me, setMe } = useApp()
-  const nav = useNavigate()
   const accounts: LocalAccount[] = ds.listAccounts?.() ?? []
   return (
     <>
@@ -174,7 +174,7 @@ function AccountMenu({ onClose }: { onClose: () => void }) {
               const m = await ds.switchAccount!(a.profile_id)
               setMe(m)
               onClose()
-              nav(m.role === 'student' ? '/' : '/mentor')
+              goTo(m.role === 'student' ? '/' : '/mentor')
             }}
           >
             {a.role === 'student' ? '🎒' : '🧑‍🏫'} {a.nick}
@@ -186,7 +186,7 @@ function AccountMenu({ onClose }: { onClose: () => void }) {
             await ds.logout()
             onClose()
             setMe(null)
-            setTimeout(() => (window.location.hash = '#/registracija'), 50)
+            goTo('/registracija')
           }}
         >
           ➕ Novi nalog (kod)

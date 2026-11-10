@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useApp } from '../state'
+import { go as goTo } from '../lib/go'
 import { SCHOOL } from '../config/school'
 import { nickProblem } from '../lib/nick'
 import { hasSupabaseConfig, isOfflineMode, setOfflineMode } from '../data'
@@ -10,7 +11,6 @@ const logo = `${import.meta.env.BASE_URL}logo.png`
 export function Welcome() {
   const offline = isOfflineMode()
   const { ds, setMe } = useApp()
-  const nav = useNavigate()
   const accounts = ds.listAccounts?.() ?? []
   return (
     <div className="page center" style={{ gap: 18 }}>
@@ -35,7 +35,7 @@ export function Welcome() {
                 onClick={async () => {
                   const m = await ds.switchAccount!(a.profile_id)
                   setMe(m)
-                  nav(m.role === 'student' ? (m.onboarded ? '/' : '/oznake') : '/mentor')
+                  goTo(m.role === 'student' ? (m.onboarded ? '/' : '/oznake') : '/mentor')
                 }}>
                 {a.role === 'student' ? '🎒' : '🧑‍🏫'} {a.nick}
               </button>
@@ -79,7 +79,6 @@ export function OfflineSwitch() {
 
 export function Register() {
   const { ds, setMe } = useApp()
-  const nav = useNavigate()
   const [step, setStep] = useState(0)
   const [code, setCode] = useState('')
   const [codeInfo, setCodeInfo] = useState<string | null>(null)
@@ -131,7 +130,7 @@ export function Register() {
       if (pass.length < 6) throw new Error('Lozinka treba da ima bar 6 znakova.')
       const me = await ds.register(code, nick, pass)
       setMe(me)
-      nav(me.role === 'student' ? '/oznake' : '/mentor', { replace: true })
+      goTo(me.role === 'student' ? '/oznake' : '/mentor')
     })
 
   return (
@@ -176,7 +175,6 @@ export function Register() {
 
 export function Login() {
   const { ds, setMe } = useApp()
-  const nav = useNavigate()
   const [nick, setNick] = useState('')
   const [pass, setPass] = useState('')
   const [err, setErr] = useState<string | null>(null)
@@ -192,7 +190,7 @@ export function Login() {
         try {
           const me = await ds.login(nick, pass)
           setMe(me)
-          nav(me.role === 'student' ? (me.onboarded ? '/' : '/oznake') : '/mentor', { replace: true })
+          goTo(me.role === 'student' ? (me.onboarded ? '/' : '/oznake') : '/mentor')
         } catch (e) {
           setErr((e as Error).message)
         } finally {
