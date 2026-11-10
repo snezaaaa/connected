@@ -1,6 +1,6 @@
 // Scenario za prezentaciju ONLINE: dva telefona (odvojeni browser konteksti) + mentor.
 // Treba pravi Supabase projekat: E2E_SUPABASE_URL i E2E_SUPABASE_ANON_KEY.
-// Mentor: E2E_MENTOR_NICK / E2E_MENTOR_PASS (podrazumijevano prof.e2e / demo1234, kod CE-MT-2026 pri prvom pokretanju).
+// Mentor: E2E_MENTOR_NICK / E2E_MENTOR_PASS (podrazumijevano prof.e2e / demo1234, kod 9001 pri prvom pokretanju).
 import { expect, test, type Browser, type Page } from '@playwright/test'
 import { PASS, createProject, dismissInvitesExcept, metric0to1, register } from './helpers'
 
@@ -22,7 +22,7 @@ async function mentorLogin(page: Page) {
   if (!ok) {
     // Prvo pokretanje: mentorski nalog preko koda
     await page.goto('./#/registracija')
-    await page.getByTestId('code').fill('CE-MT-2026')
+    await page.getByTestId('code').fill('9001')
     await page.getByRole('button', { name: 'Dalje' }).click()
     await page.getByTestId('nick').fill(MENTOR_NICK)
     await page.getByRole('button', { name: 'Dalje' }).click()
@@ -45,7 +45,7 @@ test('online: dva telefona + mentor, uživo preko Realtime', async ({ browser })
 
   // Telefon 1: A
   const a = await phone(browser)
-  await register(a, 'CE-3B-7K2Q', 'ucenicaA', ['podcast:znam', 'pisanje'])
+  await register(a, '3201', 'ucenicaA', ['podcast:znam', 'pisanje'])
   await dismissInvitesExcept(a)
   await createProject(a, TITLE, 'Druga epizoda školskog podcasta.', ['video', 'podcast'])
 
@@ -58,7 +58,7 @@ test('online: dva telefona + mentor, uživo preko Realtime', async ({ browser })
 
   // Telefon 2: B — poziv stiže odmah
   const b = await phone(browser)
-  await register(b, 'CE-2A-5M8P', 'ucenicaB', ['video:znam'])
+  await register(b, '2101', 'ucenicaB', ['video:znam'])
   const card = b.getByTestId('invite-card')
   await expect(card).toBeVisible()
   await expect(card.getByText(TITLE + '.')).toBeVisible()
@@ -81,5 +81,5 @@ test('online: dva telefona + mentor, uživo preko Realtime', async ({ browser })
   await reset(mentor)
   await expect(a.getByText('Imam pristupni kod')).toBeVisible({ timeout: 20_000 })
   await mentor.getByRole('button', { name: /Prikaži/ }).click()
-  await expect(mentor.getByTestId('codes').getByText('CE-3B-7K2Q')).toBeVisible()
+  await expect(mentor.getByTestId('codes').getByText('3201', { exact: true })).toBeVisible()
 })

@@ -82,9 +82,14 @@ export function Mentor() {
         <button className="btn small ghost" onClick={() => setShowCodes((s) => !s)}>{showCodes ? 'Sakrij' : `Prikaži (${data.codes.length})`}</button>
       </div>
       {showCodes && (
-        <div className="codes" data-testid="codes">
-          {data.codes.map((c) => (
-            <code key={c.code}>{c.code}<span>{c.role === 'student' ? c.class_label : c.role === 'mentor' ? 'mentor' : 'pedagog'}</span></code>
+        <div className="stack" data-testid="codes" style={{ gap: 8 }}>
+          {groupCodes(data.codes).map(([label, list]) => (
+            <div key={label} className="code-row">
+              <b>{label}</b>
+              <div className="chips">
+                {list.map((c) => <code key={c}>{c}</code>)}
+              </div>
+            </div>
           ))}
         </div>
       )}
@@ -106,6 +111,15 @@ export function Mentor() {
       </div>
     </div>
   )
+}
+
+function groupCodes(codes: { code: string; role: string; class_label: string | null }[]): [string, string[]][] {
+  const m = new Map<string, string[]>()
+  for (const c of codes) {
+    const k = c.role === 'student' ? c.class_label ?? '' : c.role === 'mentor' ? 'Mentor' : 'Pedagog'
+    m.set(k, [...(m.get(k) ?? []), c.code])
+  }
+  return [...m.entries()]
 }
 
 function MetricsGrid({ m }: { m: Metrics }) {

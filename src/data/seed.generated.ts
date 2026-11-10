@@ -3,192 +3,837 @@ import type { SeedData } from '../../scripts/seed-data'
 export const SEED: SeedData = {
  "codes": [
   {
-   "code": "CE-3B-7K2Q",
-   "role": "student",
-   "class_id": "3-2"
-  },
-  {
-   "code": "CE-2A-5M8P",
-   "role": "student",
-   "class_id": "2-1"
-  },
-  {
-   "code": "CE-MT-2026",
-   "role": "mentor",
-   "class_id": null
-  },
-  {
-   "code": "CE-1A-Y32C",
+   "code": "1101",
    "role": "student",
    "class_id": "1-1"
   },
   {
-   "code": "CE-1A-45K6",
+   "code": "1102",
    "role": "student",
    "class_id": "1-1"
   },
   {
-   "code": "CE-1B-RUE5",
+   "code": "1103",
+   "role": "student",
+   "class_id": "1-1"
+  },
+  {
+   "code": "1104",
+   "role": "student",
+   "class_id": "1-1"
+  },
+  {
+   "code": "1105",
+   "role": "student",
+   "class_id": "1-1"
+  },
+  {
+   "code": "1106",
+   "role": "student",
+   "class_id": "1-1"
+  },
+  {
+   "code": "1107",
+   "role": "student",
+   "class_id": "1-1"
+  },
+  {
+   "code": "1108",
+   "role": "student",
+   "class_id": "1-1"
+  },
+  {
+   "code": "1109",
+   "role": "student",
+   "class_id": "1-1"
+  },
+  {
+   "code": "1110",
+   "role": "student",
+   "class_id": "1-1"
+  },
+  {
+   "code": "1201",
    "role": "student",
    "class_id": "1-2"
   },
   {
-   "code": "CE-1B-Z5NC",
+   "code": "1202",
    "role": "student",
    "class_id": "1-2"
   },
   {
-   "code": "CE-1C-A288",
+   "code": "1203",
+   "role": "student",
+   "class_id": "1-2"
+  },
+  {
+   "code": "1204",
+   "role": "student",
+   "class_id": "1-2"
+  },
+  {
+   "code": "1205",
+   "role": "student",
+   "class_id": "1-2"
+  },
+  {
+   "code": "1206",
+   "role": "student",
+   "class_id": "1-2"
+  },
+  {
+   "code": "1207",
+   "role": "student",
+   "class_id": "1-2"
+  },
+  {
+   "code": "1208",
+   "role": "student",
+   "class_id": "1-2"
+  },
+  {
+   "code": "1209",
+   "role": "student",
+   "class_id": "1-2"
+  },
+  {
+   "code": "1210",
+   "role": "student",
+   "class_id": "1-2"
+  },
+  {
+   "code": "1301",
    "role": "student",
    "class_id": "1-3"
   },
   {
-   "code": "CE-1C-NMVK",
+   "code": "1302",
    "role": "student",
    "class_id": "1-3"
   },
   {
-   "code": "CE-1D-CZ54",
+   "code": "1303",
+   "role": "student",
+   "class_id": "1-3"
+  },
+  {
+   "code": "1304",
+   "role": "student",
+   "class_id": "1-3"
+  },
+  {
+   "code": "1305",
+   "role": "student",
+   "class_id": "1-3"
+  },
+  {
+   "code": "1306",
+   "role": "student",
+   "class_id": "1-3"
+  },
+  {
+   "code": "1307",
+   "role": "student",
+   "class_id": "1-3"
+  },
+  {
+   "code": "1308",
+   "role": "student",
+   "class_id": "1-3"
+  },
+  {
+   "code": "1309",
+   "role": "student",
+   "class_id": "1-3"
+  },
+  {
+   "code": "1310",
+   "role": "student",
+   "class_id": "1-3"
+  },
+  {
+   "code": "1401",
    "role": "student",
    "class_id": "1-4"
   },
   {
-   "code": "CE-1D-LD8U",
+   "code": "1402",
    "role": "student",
    "class_id": "1-4"
   },
   {
-   "code": "CE-2A-N9D3",
+   "code": "1403",
+   "role": "student",
+   "class_id": "1-4"
+  },
+  {
+   "code": "1404",
+   "role": "student",
+   "class_id": "1-4"
+  },
+  {
+   "code": "1405",
+   "role": "student",
+   "class_id": "1-4"
+  },
+  {
+   "code": "1406",
+   "role": "student",
+   "class_id": "1-4"
+  },
+  {
+   "code": "1407",
+   "role": "student",
+   "class_id": "1-4"
+  },
+  {
+   "code": "1408",
+   "role": "student",
+   "class_id": "1-4"
+  },
+  {
+   "code": "1409",
+   "role": "student",
+   "class_id": "1-4"
+  },
+  {
+   "code": "1410",
+   "role": "student",
+   "class_id": "1-4"
+  },
+  {
+   "code": "2101",
    "role": "student",
    "class_id": "2-1"
   },
   {
-   "code": "CE-2A-5T9J",
+   "code": "2102",
    "role": "student",
    "class_id": "2-1"
   },
   {
-   "code": "CE-2B-9MR8",
+   "code": "2103",
+   "role": "student",
+   "class_id": "2-1"
+  },
+  {
+   "code": "2104",
+   "role": "student",
+   "class_id": "2-1"
+  },
+  {
+   "code": "2105",
+   "role": "student",
+   "class_id": "2-1"
+  },
+  {
+   "code": "2106",
+   "role": "student",
+   "class_id": "2-1"
+  },
+  {
+   "code": "2107",
+   "role": "student",
+   "class_id": "2-1"
+  },
+  {
+   "code": "2108",
+   "role": "student",
+   "class_id": "2-1"
+  },
+  {
+   "code": "2109",
+   "role": "student",
+   "class_id": "2-1"
+  },
+  {
+   "code": "2110",
+   "role": "student",
+   "class_id": "2-1"
+  },
+  {
+   "code": "2201",
    "role": "student",
    "class_id": "2-2"
   },
   {
-   "code": "CE-2B-M3CA",
+   "code": "2202",
    "role": "student",
    "class_id": "2-2"
   },
   {
-   "code": "CE-2C-NA6Q",
+   "code": "2203",
+   "role": "student",
+   "class_id": "2-2"
+  },
+  {
+   "code": "2204",
+   "role": "student",
+   "class_id": "2-2"
+  },
+  {
+   "code": "2205",
+   "role": "student",
+   "class_id": "2-2"
+  },
+  {
+   "code": "2206",
+   "role": "student",
+   "class_id": "2-2"
+  },
+  {
+   "code": "2207",
+   "role": "student",
+   "class_id": "2-2"
+  },
+  {
+   "code": "2208",
+   "role": "student",
+   "class_id": "2-2"
+  },
+  {
+   "code": "2209",
+   "role": "student",
+   "class_id": "2-2"
+  },
+  {
+   "code": "2210",
+   "role": "student",
+   "class_id": "2-2"
+  },
+  {
+   "code": "2301",
    "role": "student",
    "class_id": "2-3"
   },
   {
-   "code": "CE-2C-3BXZ",
+   "code": "2302",
    "role": "student",
    "class_id": "2-3"
   },
   {
-   "code": "CE-2D-66TD",
+   "code": "2303",
+   "role": "student",
+   "class_id": "2-3"
+  },
+  {
+   "code": "2304",
+   "role": "student",
+   "class_id": "2-3"
+  },
+  {
+   "code": "2305",
+   "role": "student",
+   "class_id": "2-3"
+  },
+  {
+   "code": "2306",
+   "role": "student",
+   "class_id": "2-3"
+  },
+  {
+   "code": "2307",
+   "role": "student",
+   "class_id": "2-3"
+  },
+  {
+   "code": "2308",
+   "role": "student",
+   "class_id": "2-3"
+  },
+  {
+   "code": "2309",
+   "role": "student",
+   "class_id": "2-3"
+  },
+  {
+   "code": "2310",
+   "role": "student",
+   "class_id": "2-3"
+  },
+  {
+   "code": "2401",
    "role": "student",
    "class_id": "2-4"
   },
   {
-   "code": "CE-2D-8YRH",
+   "code": "2402",
    "role": "student",
    "class_id": "2-4"
   },
   {
-   "code": "CE-3A-AFNB",
+   "code": "2403",
+   "role": "student",
+   "class_id": "2-4"
+  },
+  {
+   "code": "2404",
+   "role": "student",
+   "class_id": "2-4"
+  },
+  {
+   "code": "2405",
+   "role": "student",
+   "class_id": "2-4"
+  },
+  {
+   "code": "2406",
+   "role": "student",
+   "class_id": "2-4"
+  },
+  {
+   "code": "2407",
+   "role": "student",
+   "class_id": "2-4"
+  },
+  {
+   "code": "2408",
+   "role": "student",
+   "class_id": "2-4"
+  },
+  {
+   "code": "2409",
+   "role": "student",
+   "class_id": "2-4"
+  },
+  {
+   "code": "2410",
+   "role": "student",
+   "class_id": "2-4"
+  },
+  {
+   "code": "3101",
    "role": "student",
    "class_id": "3-1"
   },
   {
-   "code": "CE-3A-TG88",
+   "code": "3102",
    "role": "student",
    "class_id": "3-1"
   },
   {
-   "code": "CE-3B-LKMU",
+   "code": "3103",
+   "role": "student",
+   "class_id": "3-1"
+  },
+  {
+   "code": "3104",
+   "role": "student",
+   "class_id": "3-1"
+  },
+  {
+   "code": "3105",
+   "role": "student",
+   "class_id": "3-1"
+  },
+  {
+   "code": "3106",
+   "role": "student",
+   "class_id": "3-1"
+  },
+  {
+   "code": "3107",
+   "role": "student",
+   "class_id": "3-1"
+  },
+  {
+   "code": "3108",
+   "role": "student",
+   "class_id": "3-1"
+  },
+  {
+   "code": "3109",
+   "role": "student",
+   "class_id": "3-1"
+  },
+  {
+   "code": "3110",
+   "role": "student",
+   "class_id": "3-1"
+  },
+  {
+   "code": "3201",
    "role": "student",
    "class_id": "3-2"
   },
   {
-   "code": "CE-3B-R9BK",
+   "code": "3202",
    "role": "student",
    "class_id": "3-2"
   },
   {
-   "code": "CE-3C-XRRL",
+   "code": "3203",
+   "role": "student",
+   "class_id": "3-2"
+  },
+  {
+   "code": "3204",
+   "role": "student",
+   "class_id": "3-2"
+  },
+  {
+   "code": "3205",
+   "role": "student",
+   "class_id": "3-2"
+  },
+  {
+   "code": "3206",
+   "role": "student",
+   "class_id": "3-2"
+  },
+  {
+   "code": "3207",
+   "role": "student",
+   "class_id": "3-2"
+  },
+  {
+   "code": "3208",
+   "role": "student",
+   "class_id": "3-2"
+  },
+  {
+   "code": "3209",
+   "role": "student",
+   "class_id": "3-2"
+  },
+  {
+   "code": "3210",
+   "role": "student",
+   "class_id": "3-2"
+  },
+  {
+   "code": "3301",
    "role": "student",
    "class_id": "3-3"
   },
   {
-   "code": "CE-3C-U5DV",
+   "code": "3302",
    "role": "student",
    "class_id": "3-3"
   },
   {
-   "code": "CE-3D-SCPY",
+   "code": "3303",
+   "role": "student",
+   "class_id": "3-3"
+  },
+  {
+   "code": "3304",
+   "role": "student",
+   "class_id": "3-3"
+  },
+  {
+   "code": "3305",
+   "role": "student",
+   "class_id": "3-3"
+  },
+  {
+   "code": "3306",
+   "role": "student",
+   "class_id": "3-3"
+  },
+  {
+   "code": "3307",
+   "role": "student",
+   "class_id": "3-3"
+  },
+  {
+   "code": "3308",
+   "role": "student",
+   "class_id": "3-3"
+  },
+  {
+   "code": "3309",
+   "role": "student",
+   "class_id": "3-3"
+  },
+  {
+   "code": "3310",
+   "role": "student",
+   "class_id": "3-3"
+  },
+  {
+   "code": "3401",
    "role": "student",
    "class_id": "3-4"
   },
   {
-   "code": "CE-3D-FSN4",
+   "code": "3402",
    "role": "student",
    "class_id": "3-4"
   },
   {
-   "code": "CE-4A-3Q4B",
+   "code": "3403",
+   "role": "student",
+   "class_id": "3-4"
+  },
+  {
+   "code": "3404",
+   "role": "student",
+   "class_id": "3-4"
+  },
+  {
+   "code": "3405",
+   "role": "student",
+   "class_id": "3-4"
+  },
+  {
+   "code": "3406",
+   "role": "student",
+   "class_id": "3-4"
+  },
+  {
+   "code": "3407",
+   "role": "student",
+   "class_id": "3-4"
+  },
+  {
+   "code": "3408",
+   "role": "student",
+   "class_id": "3-4"
+  },
+  {
+   "code": "3409",
+   "role": "student",
+   "class_id": "3-4"
+  },
+  {
+   "code": "3410",
+   "role": "student",
+   "class_id": "3-4"
+  },
+  {
+   "code": "4101",
    "role": "student",
    "class_id": "4-1"
   },
   {
-   "code": "CE-4A-KB8Y",
+   "code": "4102",
    "role": "student",
    "class_id": "4-1"
   },
   {
-   "code": "CE-4B-SS6N",
+   "code": "4103",
+   "role": "student",
+   "class_id": "4-1"
+  },
+  {
+   "code": "4104",
+   "role": "student",
+   "class_id": "4-1"
+  },
+  {
+   "code": "4105",
+   "role": "student",
+   "class_id": "4-1"
+  },
+  {
+   "code": "4106",
+   "role": "student",
+   "class_id": "4-1"
+  },
+  {
+   "code": "4107",
+   "role": "student",
+   "class_id": "4-1"
+  },
+  {
+   "code": "4108",
+   "role": "student",
+   "class_id": "4-1"
+  },
+  {
+   "code": "4109",
+   "role": "student",
+   "class_id": "4-1"
+  },
+  {
+   "code": "4110",
+   "role": "student",
+   "class_id": "4-1"
+  },
+  {
+   "code": "4201",
    "role": "student",
    "class_id": "4-2"
   },
   {
-   "code": "CE-4B-4TXR",
+   "code": "4202",
    "role": "student",
    "class_id": "4-2"
   },
   {
-   "code": "CE-4C-HGYQ",
+   "code": "4203",
+   "role": "student",
+   "class_id": "4-2"
+  },
+  {
+   "code": "4204",
+   "role": "student",
+   "class_id": "4-2"
+  },
+  {
+   "code": "4205",
+   "role": "student",
+   "class_id": "4-2"
+  },
+  {
+   "code": "4206",
+   "role": "student",
+   "class_id": "4-2"
+  },
+  {
+   "code": "4207",
+   "role": "student",
+   "class_id": "4-2"
+  },
+  {
+   "code": "4208",
+   "role": "student",
+   "class_id": "4-2"
+  },
+  {
+   "code": "4209",
+   "role": "student",
+   "class_id": "4-2"
+  },
+  {
+   "code": "4210",
+   "role": "student",
+   "class_id": "4-2"
+  },
+  {
+   "code": "4301",
    "role": "student",
    "class_id": "4-3"
   },
   {
-   "code": "CE-4C-ZK38",
+   "code": "4302",
    "role": "student",
    "class_id": "4-3"
   },
   {
-   "code": "CE-4D-LFBJ",
+   "code": "4303",
+   "role": "student",
+   "class_id": "4-3"
+  },
+  {
+   "code": "4304",
+   "role": "student",
+   "class_id": "4-3"
+  },
+  {
+   "code": "4305",
+   "role": "student",
+   "class_id": "4-3"
+  },
+  {
+   "code": "4306",
+   "role": "student",
+   "class_id": "4-3"
+  },
+  {
+   "code": "4307",
+   "role": "student",
+   "class_id": "4-3"
+  },
+  {
+   "code": "4308",
+   "role": "student",
+   "class_id": "4-3"
+  },
+  {
+   "code": "4309",
+   "role": "student",
+   "class_id": "4-3"
+  },
+  {
+   "code": "4310",
+   "role": "student",
+   "class_id": "4-3"
+  },
+  {
+   "code": "4401",
    "role": "student",
    "class_id": "4-4"
   },
   {
-   "code": "CE-4D-SW28",
+   "code": "4402",
    "role": "student",
    "class_id": "4-4"
   },
   {
-   "code": "CE-MT-J448",
+   "code": "4403",
+   "role": "student",
+   "class_id": "4-4"
+  },
+  {
+   "code": "4404",
+   "role": "student",
+   "class_id": "4-4"
+  },
+  {
+   "code": "4405",
+   "role": "student",
+   "class_id": "4-4"
+  },
+  {
+   "code": "4406",
+   "role": "student",
+   "class_id": "4-4"
+  },
+  {
+   "code": "4407",
+   "role": "student",
+   "class_id": "4-4"
+  },
+  {
+   "code": "4408",
+   "role": "student",
+   "class_id": "4-4"
+  },
+  {
+   "code": "4409",
+   "role": "student",
+   "class_id": "4-4"
+  },
+  {
+   "code": "4410",
+   "role": "student",
+   "class_id": "4-4"
+  },
+  {
+   "code": "9001",
    "role": "mentor",
    "class_id": null
   },
   {
-   "code": "CE-MT-9CZR",
+   "code": "9002",
    "role": "mentor",
    "class_id": null
   },
   {
-   "code": "CE-PG-CXSG",
+   "code": "9003",
+   "role": "mentor",
+   "class_id": null
+  },
+  {
+   "code": "9004",
+   "role": "mentor",
+   "class_id": null
+  },
+  {
+   "code": "9005",
+   "role": "mentor",
+   "class_id": null
+  },
+  {
+   "code": "8001",
+   "role": "pedagog",
+   "class_id": null
+  },
+  {
+   "code": "8002",
    "role": "pedagog",
    "class_id": null
   }

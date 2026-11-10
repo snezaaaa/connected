@@ -15,7 +15,7 @@ test('offline: A pokreće projekat → mentor odobrava → B prihvata poziv → 
   await expect(page.getByText('Pronađi svoje ljude.')).toBeVisible()
 
   // 1. Učenica A: nalog + projekat
-  await register(page, 'CE-3B-7K2Q', 'ucenicaA', ['podcast:znam', 'pisanje'])
+  await register(page, '3201', 'ucenicaA', ['podcast:znam', 'pisanje'])
   await dismissInvitesExcept(page)
   await createProject(page, TITLE, 'Druga epizoda školskog podcasta.', ['video', 'podcast'])
   await expect(page.getByText('Čeka mentora')).toBeVisible()
@@ -32,7 +32,7 @@ test('offline: A pokreće projekat → mentor odobrava → B prihvata poziv → 
   await page.getByTestId('switch-account').click()
   await page.getByRole('button', { name: /Novi nalog/ }).click()
   await expect(page.getByTestId('code')).toBeVisible()
-  await register(page, 'CE-2A-5M8P', 'ucenicaB', ['video:znam'], { goto: false })
+  await register(page, '2101', 'ucenicaB', ['video:znam'], { goto: false })
   const card = page.getByTestId('invite-card')
   await expect(card).toBeVisible()
   await expect(card.getByText('Trebaš nam.')).toBeVisible()
@@ -61,13 +61,13 @@ test('offline: A pokreće projekat → mentor odobrava → B prihvata poziv → 
   await expect(page.getByText('Demo je vraćen na početak.')).toBeVisible()
   await expect(page.getByTestId('pending-project')).toHaveCount(0)
   await page.getByRole('button', { name: /Prikaži/ }).click()
-  await expect(page.getByTestId('codes').getByText('CE-3B-7K2Q')).toBeVisible()
-  await expect(page.getByTestId('codes').getByText('CE-2A-5M8P')).toBeVisible()
+  await expect(page.getByTestId('codes').getByText('3201', { exact: true })).toBeVisible()
+  await expect(page.getByTestId('codes').getByText('2101', { exact: true })).toBeVisible()
   await expect.poll(() => metric0to1(page)).toBe(5)
 })
 
 test('offline: „Treba mi pomoć“ vidi samo mentor; pravila jezika', async ({ page }) => {
-  await register(page, 'CE-3B-7K2Q', 'ucenica.c', ['crtanje'])
+  await register(page, '3201', 'ucenica.c', ['crtanje'])
   await dismissInvitesExcept(page)
   await page.getByTestId('help-btn').click()
   await page.getByTestId('help-sheet').getByRole('button', { name: 'Pošalji diskretno' }).click()

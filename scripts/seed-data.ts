@@ -150,21 +150,14 @@ const firstGroupEvents = [
 ]
 
 // ─── Pristupni kodovi ───────────────────────────────────────
-// Deterministički (isti pri svakom generisanju).
-let seed = 20261110
-const rnd = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648)
-const ALPH = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
-const four = () => Array.from({ length: 4 }, () => ALPH[Math.floor(rnd() * ALPH.length)]).join('')
-
-const codes: SeedData['codes'] = [
-  // Lako pamtljivi kodovi za prezentaciju (vidi README):
-  { code: 'CE-3B-7K2Q', role: 'student', class_id: '3-2' },
-  { code: 'CE-2A-5M8P', role: 'student', class_id: '2-1' },
-  { code: 'CE-MT-2026', role: 'mentor', class_id: null },
-]
-for (const c of CLASSES) for (let k = 0; k < 2; k++) codes.push({ code: `CE-${c.codePrefix}-${four()}`, role: 'student', class_id: c.id })
-codes.push({ code: `CE-MT-${four()}`, role: 'mentor', class_id: null })
-codes.push({ code: `CE-MT-${four()}`, role: 'mentor', class_id: null })
-codes.push({ code: `CE-PG-${four()}`, role: 'pedagog', class_id: null })
+// Četiri cifre: razred · smjer · redni broj (01–10).  3201 = III-2, kod br. 1.
+// Mentori 9001–9005, pedagog 8001–8002. Svaki kod važi jednom.
+export const CODES_PER_CLASS = 10
+const codes: SeedData['codes'] = []
+for (const c of CLASSES)
+  for (let k = 1; k <= CODES_PER_CLASS; k++)
+    codes.push({ code: `${c.razred}${c.id.split('-')[1]}${String(k).padStart(2, '0')}`, role: 'student', class_id: c.id })
+for (let k = 1; k <= 5; k++) codes.push({ code: `900${k}`, role: 'mentor', class_id: null })
+for (let k = 1; k <= 2; k++) codes.push({ code: `800${k}`, role: 'pedagog', class_id: null })
 
 export const SEED: SeedData = { codes, profiles, projects, members, wall, firstGroupEvents }

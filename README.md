@@ -74,7 +74,7 @@ Pokreće se triggerom kad učenik sačuva oznake (novi nalog), kad mentor odobri
 2. Sačekajte da se projekat podigne (1–2 min).
 
 ### 2. Baza: migracije i seed
-> Baza postavljena prije ispravke „Resetuj demo“: pokrenite i `supabase/migrations/0006_fix_reset.sql` (u `setup.sql` je već uključen).
+> Baza postavljena ranijom verzijom: pokrenite i `supabase/migrations/0006_fix_reset.sql` i `0007_simple_codes.sql` (u `setup.sql` su već uključeni).
 
 1. U projektu otvorite **SQL Editor** → **New query**.
 2. Zalijepite **cijeli** sadržaj fajla [`supabase/setup.sql`](supabase/setup.sql) i kliknite **Run**. Pokreće se jednom, na praznom projektu.
@@ -110,15 +110,22 @@ npm run dev
 
 ## Demo nalozi
 
-Pristupni kodovi su u seedu. Svaki važi **jednom**. Mentor vidi sve neiskorišćene kodove na ekranu **Mentor**.
+Pristupni kodovi su **četiri cifre** i svaki važi **jednom**. Iz koda se vidi odjeljenje:
 
-| Kod | Za |
+**razred · smjer · redni broj** → `3201` = III razred, smjer 2 (turistički tehničar), kod br. 01
+
+| Kodovi | Za |
 |---|---|
-| `CE-3B-7K2Q` | Učenica A (III-2) |
-| `CE-2A-5M8P` | Učenica B (II-1) |
-| `CE-MT-2026` | Mentor: već iskorišćen za nalog **`prof.e2e`** / `demo1234` (koristi ga i online test) |
+| `1101`–`1110` … `4401`–`4410` | Učenici: po 10 kodova za svako od 16 odjeljenja (160 ukupno) |
+| `9001`–`9005` | Mentori |
+| `8001`–`8002` | Pedagog |
+| `3201` | Učenica A u scenariju (III-2) |
+| `2101` | Učenica B u scenariju (II-1) |
 
-Po dva koda postoje za svako od 16 odjeljenja, plus još dva mentorska i jedan za pedagoga.
+Postojeći mentorski nalog: **`prof.e2e`** / `demo1234` (koristi ga i online test).
+Mentor vidi sve neiskorišćene kodove na ekranu **Mentor**. „Resetuj demo“ ih ponovo oslobađa.
+
+> Četvorocifreni kodovi se lako pogode. To je u redu za demo sa izmišljenim učenicima, ali ne i za pravu upotrebu.
 
 ---
 
@@ -126,11 +133,11 @@ Po dva koda postoje za svako od 16 odjeljenja, plus još dva mentorska i jedan z
 
 **Priprema:** mentor (laptop ili telefon 3) je prijavljen i klikne **Resetuj demo**. Telefoni 1 i 2 imaju otvorenu aplikaciju na početnom ekranu.
 
-1. **Telefon 1, učenica A:** „Imam pristupni kod“ → `CE-3B-7K2Q` → nik → lozinka → oznake: *Znam* → Podcast; *Volim* → Pisanje → **Sačuvaj profil**.
+1. **Telefon 1, učenica A:** „Imam pristupni kod“ → `3201` → nik → lozinka → oznake: *Znam* → Podcast; *Volim* → Pisanje → **Sačuvaj profil**.
    A može dobiti do dva poziva za postojeće projekte (npr. foto-priča, jer voli pisanje). Klikne „Ne sada“: to pokazuje da odbijanje nema posljedica.
    **Pokreni projekat:** „Podcast traži montažera“, cilj, oznake *Video montaža* + *Podcast* → **Pošalji na odobrenje**.
 2. **Laptop, mentor:** projekat se sam pojavi pod „Na odobrenju“ → **✓ Odobri**.
-3. **Telefon 2, učenica B:** `CE-2A-5M8P` → nik → lozinka → *Znam* → **Video montaža** → Sačuvaj.
+3. **Telefon 2, učenica B:** `2101` → nik → lozinka → *Znam* → **Video montaža** → Sačuvaj.
    **Poziv stiže odmah:** „Trebaš nam. Podcast traži montažera. Zašto ti: znaš · Video montaža“ → **Pridružujem se** 🎉
 4. **Telefon 1:** A odmah dobije obavještenje „… se pridružio/la timu 🎉“, a B je na zidu tima.
    **Laptop:** mjerilo „prešlo sa 0 na 1 grupu“ poraste uživo.

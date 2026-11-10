@@ -141,10 +141,10 @@ export function Register() {
       {step === 0 && (
         <form className="stack" onSubmit={(e) => (e.preventDefault(), submitCode())}>
           <h1>Unesi pristupni kod</h1>
-          <p className="muted">Kod si dobio/la od razrednog starješine ili mentora. Važi jednom.</p>
-          <input className="input code" data-testid="code" placeholder="CE-3B-7K2Q" value={code} autoFocus
-            onChange={(e) => setCode(e.target.value.toUpperCase())} autoCapitalize="characters" autoComplete="off" />
-          <button className="btn block" disabled={busy || code.length < 6}>Dalje</button>
+          <p className="muted">Četiri cifre od razrednog starješine ili mentora. Važi jednom.</p>
+          <input className="input code" data-testid="code" placeholder="npr. 3201" value={code} autoFocus inputMode="numeric"
+            onChange={(e) => setCode(e.target.value.toUpperCase().trim())} autoCapitalize="characters" autoComplete="off" maxLength={12} />
+          <button className="btn block" disabled={busy || code.length < 4}>Dalje</button>
         </form>
       )}
       {step === 1 && (

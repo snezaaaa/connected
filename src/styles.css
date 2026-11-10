@@ -207,6 +207,10 @@ textarea.input { resize: vertical; min-height: 84px; }
 .codes { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .codes code { font-family: var(--head); font-weight: 700; font-size: 13px; background: #f6f5fa; padding: 6px 8px; border-radius: 10px; display: flex; justify-content: space-between; gap: 4px; }
 .codes code span { color: var(--ink-3); font-weight: 600; }
+.code-row { background: #fff; border-radius: 14px; padding: 10px 12px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 6px; }
+.code-row b { font-family: var(--head); font-size: 13px; color: var(--ink-2); }
+.code-row .chips { gap: 5px; }
+.code-row code { font-family: var(--head); font-weight: 700; font-size: 14px; background: var(--violet-soft); color: var(--ink); padding: 4px 8px; border-radius: 8px; letter-spacing: 0.04em; }
 .section-title { display: flex; align-items: center; justify-content: space-between; margin-top: 6px; }
 
 /* ── Poziv (glavni trenutak) ───────────────────── */

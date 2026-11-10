@@ -10,7 +10,7 @@ export const SCHOOL = {
   slogan: 'Pronađi svoje ljude.',
 }
 
-/** Smjerovi. `letter` ide u pristupni kod (npr. CE-3B-…), `index` u oznaku odjeljenja (III-2). */
+/** Smjerovi. `index` ide u oznaku odjeljenja (III-2) i u pristupni kod (3201 = III-2, kod br. 1). */
 export const SMJEROVI = [
   { id: 'et', letter: 'A', index: 1, naziv: 'Ekonomski tehničar' },
   { id: 'tt', letter: 'B', index: 2, naziv: 'Turistički tehničar' },
