@@ -450,7 +450,7 @@ begin
     'metrics', public.get_metrics());
 end $$;
 
--- Vraća bazu na seed. Briše naloge učenika napravljene tokom demonstracije;
+-- Vraća bazu na seed. („where true“: Supabase odbija DELETE bez WHERE preko API-ja.) Briše naloge učenika napravljene tokom demonstracije;
 -- mentorski/pedagoški nalozi ostaju.
 create or replace function public.reset_demo()
 returns void language plpgsql security definer set search_path = '' as $$
@@ -459,12 +459,12 @@ begin
   delete from auth.users u
   where exists (select 1 from public.profiles p where p.user_id = u.id and p.role = 'student')
      or not exists (select 1 from public.profiles p where p.user_id = u.id);
-  delete from public.notifications;
-  delete from public.help_signals;
-  delete from public.projects;            -- kaskadno: oznake, članovi, pozivi, zid
-  delete from public.group_members;
+  delete from public.notifications where true;
+  delete from public.help_signals where true;
+  delete from public.projects where true; -- kaskadno: oznake, članovi, pozivi, zid
+  delete from public.group_members where true;
   delete from public.profiles where role = 'student';
-  delete from private.first_group_events;
+  delete from private.first_group_events where true;
   update public.access_codes set used_at = null where role = 'student';
   perform private.load_seed();
   update public.demo_meta set reset_at = now() where id = 1;

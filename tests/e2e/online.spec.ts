@@ -18,7 +18,7 @@ async function mentorLogin(page: Page) {
   await page.getByLabel('Nik').fill(MENTOR_NICK)
   await page.getByLabel('Lozinka').fill(MENTOR_PASS)
   await page.getByRole('button', { name: 'Prijavi se' }).click()
-  const ok = await page.getByRole('heading', { name: 'Mentor' }).isVisible({ timeout: 8000 }).catch(() => false)
+  const ok = await page.getByRole('heading', { name: 'Mentor' }).waitFor({ timeout: 10_000 }).then(() => true, () => false)
   if (!ok) {
     // Prvo pokretanje: mentorski nalog preko koda
     await page.goto('./#/registracija')
